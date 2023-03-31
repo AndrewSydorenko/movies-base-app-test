@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import {
   getTrendingMovies,
   searchMovies,
@@ -7,6 +7,7 @@ import {
   getMovieCredits,
   getMovieReviews,
 } from '../components/api';
+import { SharedLayout } from './SharedLayout';
 
 const Home = lazy(() => import('../pages/Home'));
 const Movies = lazy(() => import('../pages/Movies'));
@@ -37,40 +38,34 @@ function App() {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/movies">Movies</NavLink>
-          </li>
-        </ul>
         <Routes>
-          <Route
-            path="/"
-            element={<Home trendingMovies={trendingMovies} />}
-          ></Route>
-          <Route
-            path="/movies"
-            element={
-              <Movies
-                handleSearch={handleSearch}
-                searchResults={searchResults}
-              />
-            }
-          ></Route>
-          <Route
-            path="/movies/:movieId"
-            element={<MovieDetails getMovieDetails={getMovieDetails} />}
-          >
+          <Route path="/" element={<SharedLayout />}>
             <Route
-              path="cast"
-              element={<Cast getMovieCredits={getMovieCredits} />}
+              index
+              element={<Home trendingMovies={trendingMovies} />}
             ></Route>
             <Route
-              path="reviews"
-              element={<Reviews getMovieReviews={getMovieReviews} />}
+              path="/movies"
+              element={
+                <Movies
+                  handleSearch={handleSearch}
+                  searchResults={searchResults}
+                />
+              }
             ></Route>
+            <Route
+              path="/movies/:movieId"
+              element={<MovieDetails getMovieDetails={getMovieDetails} />}
+            >
+              <Route
+                path="cast"
+                element={<Cast getMovieCredits={getMovieCredits} />}
+              ></Route>
+              <Route
+                path="reviews"
+                element={<Reviews getMovieReviews={getMovieReviews} />}
+              ></Route>
+            </Route>
           </Route>
         </Routes>
       </Suspense>

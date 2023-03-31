@@ -1,6 +1,26 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, Link, useLocation } from 'react-router-dom';
 import { searchMovies } from '../components/api';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  > ul,
+  li {
+    list-style: none;
+  }
+  > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
 
 function Movies() {
   const [query, setQuery] = useState('');
@@ -35,7 +55,7 @@ function Movies() {
   };
 
   return (
-    <div>
+    <Container>
       <h1>Search Movies</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -59,7 +79,7 @@ function Movies() {
           </li>
         ))}
       </ul>
-    </div>
+    </Container>
   );
 }
 
