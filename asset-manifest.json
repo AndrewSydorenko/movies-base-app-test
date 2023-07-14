@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/movies-base-app-test/static/css/main.204cb0aa.css",
-    "main.js": "/movies-base-app-test/static/js/main.c61ac21c.js",
+    "main.js": "/movies-base-app-test/static/js/main.8f5ffd9f.js",
     "static/js/415.93923682.chunk.js": "/movies-base-app-test/static/js/415.93923682.chunk.js",
     "static/js/134.5fce9251.chunk.js": "/movies-base-app-test/static/js/134.5fce9251.chunk.js",
     "static/js/884.49eeadf3.chunk.js": "/movies-base-app-test/static/js/884.49eeadf3.chunk.js",
@@ -9,7 +9,7 @@
     "static/js/681.09204464.chunk.js": "/movies-base-app-test/static/js/681.09204464.chunk.js",
     "index.html": "/movies-base-app-test/index.html",
     "main.204cb0aa.css.map": "/movies-base-app-test/static/css/main.204cb0aa.css.map",
-    "main.c61ac21c.js.map": "/movies-base-app-test/static/js/main.c61ac21c.js.map",
+    "main.8f5ffd9f.js.map": "/movies-base-app-test/static/js/main.8f5ffd9f.js.map",
     "415.93923682.chunk.js.map": "/movies-base-app-test/static/js/415.93923682.chunk.js.map",
     "134.5fce9251.chunk.js.map": "/movies-base-app-test/static/js/134.5fce9251.chunk.js.map",
     "884.49eeadf3.chunk.js.map": "/movies-base-app-test/static/js/884.49eeadf3.chunk.js.map",
@@ -18,6 +18,6 @@
   },
   "entrypoints": [
     "static/css/main.204cb0aa.css",
-    "static/js/main.c61ac21c.js"
+    "static/js/main.8f5ffd9f.js"
   ]
 }
